@@ -206,6 +206,8 @@ body {
 	border-radius: 5px;
 	text-align: center;
 	margin-right: 15px;
+	outline: none;
+	text-decoration: none;
 }
 
 
