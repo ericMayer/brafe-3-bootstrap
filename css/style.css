@@ -1,0 +1,285 @@
+/* Reset e Estilos Gerais */
+
+body, p, h1, ul, li {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #252525;
+}
+
+body {
+	font-family: Georgia, serif;
+	color: #252525;
+	background-color: #e7e4d8;
+}
+ 
+* {
+	box-sizing: border-box;
+}
+
+/* Fim Reset e Estilos Gerais */
+
+/* Menu */
+
+.menu {
+	padding: 20px;
+	background-color: #d6d3c8;
+}
+
+
+.menu-nav {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menu-nav ul li {
+	display: inline-block;
+	/*margin: 0 10px;*/
+}
+
+.menu-nav ul li a {
+	font-size: 1.125em;
+	margin: 0 10px;
+	text-decoration: none; /* tirando sublinhado padrão do a, pois o bootstrap voltou essa propriedade */
+	color: #252525;
+}
+
+.menu-nav ul li:first-child a {
+	margin-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.menu-logo {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.menu-logo img {
+		margin: 0 auto;
+	}
+
+	.menu-nav {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+	}
+
+	.menu-nav ul li a {
+		margin: 0 5px;
+		font-size: 1em;
+	}
+
+}
+
+/* Fim Menu */
+
+/* Menu Principal */
+
+.main-container {
+	margin-bottom: 40px;
+	
+}
+
+
+.main-nav {
+	width: 300px;
+	background: #252525;
+	
+}
+
+.main-nav a {
+	display: block;
+	color: #fff;
+	border-bottom: 3px solid #484846;
+	font-size: 1.125em;
+	padding: 20px;
+	outline: none;
+}
+
+.main-nav li a::before {
+	content: '';
+	display: inline-block; /* para ficar na mesma linha os itens */
+	width: 24px;
+	height: 24px;
+	background-image: url('../img/icones.png'); /* imagem que será usada dos ícones, a posição do background será alterada com position para que seja exibido os ícones corretos, é usado apenas uma imagem para não precisar ficar carregando várias imagens */
+	margin-right: 20px;
+
+	position: relative; /* posição relativa a ele mesmo, pode mudar de local, mas continua existindo com uma sombra na posição original */
+	top: 5px; /* usado para centralizar o ícone */
+}
+
+.main-contabilidade::before { 
+	background-position: 0 0; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+.main-produtos::before {
+	background-position: 0 -24px; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+.main-paginas::before {
+	background-position: 0 -48px; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+.main-plugins::before {
+	background-position: 0 -72px; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+.main-formularios::before {
+	background-position: 0 -96px; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+.main-hospedagem::before {
+	background-position: 0 -120px; /* primeiro valor relacionado a direita e esquerda, segundo valor para cima e para baixo */
+}
+
+@media only screen and (max-width: 768px) {
+
+	.main-nav {
+		
+		background: none;
+		margin: 20px 0 0 20px; /* separando conteúdo */
+		padding: 0px;
+		width: auto; /* largura automática de acordo com o tamanho ocupado */
+	}
+
+	.main-nav li {
+		display: inline-block; /* para manter na mesma linha o conteúdo */
+	}
+
+	.main-nav ul li a::before {
+		display: block; /* para o a ocupar todo o espaço dele e pegar o width e heigth */
+		margin: 0px;
+		top: 0px; /* para centralizar o ícone dentro do seu quadrado */
+	}
+
+	.main-nav a {
+		width: 44px; /* distância boa para um dedo clicar */
+		height: 44px;
+		border: none;
+		overflow: hidden;
+		padding: 10px;
+		color: #252525;
+		background-color: #252525;
+		border-radius: 4px;
+		margin: 5px 5px 5px 0; /* para a esquerda não está adicionado espaço, pois já têm 20px */
+	}
+}
+
+/* Fim Menu Principal */
+
+/* Produtos */
+
+.produtos {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+
+
+.produtos h1 {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.produtos header a {
+	float: right;
+	background-color: #c17139;
+	color: #e7e4d8;
+	font-size: 1.125em;
+	font-family: Courier, monospace;
+	text-transform: uppercase;
+	padding: 15px 20px;
+	border-radius: 5px;
+	text-align: center;
+	margin-right: 15px;
+}
+
+
+.produtos-item {
+	background-color: #fff;
+
+	position: relative; /* definindo posição relative, pois um elemento pai têm que ser relativo para que conseguir usar o absolute a do ícone do editar */
+	margin-top: 40px;
+
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .35); /* o primeiro valor corresponde à distância horizontal da sombra, o segundo à vertical, o terceiro o blur(“o quanto borrada a sombra deve ser”), o quarto valor é o tamanho da sombra, o quinto é a cor em rgba sendo o a para definir a transparência da sombra */
+}
+
+.produtos-item a {
+	width: 24px;
+	height: 24px;
+
+	overflow: hidden; /* tudo que sair do container será escondido na tela */
+	text-indent: -200px; /* movendo o texto para o lado esquerdo para esconder ele na tela */
+	position: absolute; /* text-indent não funciona em elementos inline, posição absoluta usa a posição do elemento pai como referencia no caso o produtos-item, caso o produtos-item não tivesse nenhum position iria buscar pelo main-container, dai caso esse também não tivesse nada, se posicionaria de acordo com o body, alterado a posição do elemento também permite movimentar uma elemento inline com o text-indent */
+	background: url('../img/edit.svg') no-repeat;
+
+	top: 10px;
+	right: 20px;
+}
+
+.produtos-item a:hover {
+	background: url('../img/edit-hover.svg') no-repeat;
+}
+
+.produtos-item ul {
+	
+	padding: 0 20px; /* utilizado padding e não margin, pois o padding é adicionado no tamanho do width, por causa da propriedade box-sizing: border-box;, o margin é somado, então caso optar pelo margin no lugar do padding, será necessário adicionar -180px para funcionar */
+	
+}
+
+.produtos-item li {
+	padding: 12px 0;
+	border-bottom: 1px solid #e7e4d8;
+
+	font-size: 1.125em;
+	font-family: Courier, monospace;
+
+}
+
+.produtos-item li:last-child {
+	border-bottom: none;
+}
+
+.produtos-item span {
+	font-weight: bold;
+	width: 80px;
+	display: inline-block; /* por padrão a tag span é inline, alterando para inline-block para manter o contéudo na mesma linha e para que possa pegar o width, pois elementos inline não é possível definir tamanhos */
+}
+
+@media only screen and (max-width: 768px) { /* aproximado do mesmo breakpoint do bootstrap */
+
+	.produtos header a {
+		
+		/*display: inline-block;*/
+		margin-top: 20px;
+		margin-left: 15px;
+	}
+}
+
+/* Fim Produtos */
+
+/* Rodapé */
+
+.rodape {
+	font-size: 1.125em;
+	text-align: center;
+	padding: 40px 0;
+	line-height: 1.4em;
+	background-color: #d6d3c8;
+}
+
+/* Fim Rodapé */
